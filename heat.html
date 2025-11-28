@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat - Thermal Crowd Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Initial Fade In State */
+        body {
+            opacity: 0;
+            filter: blur(20px);
+            transition: opacity 1.5s ease-out, filter 1.5s ease-out;
+        }
+
+        body.loaded {
+            opacity: 1;
+            filter: blur(0px);
+        }
+
+        body.animation-complete {
+            filter: none;
+            transition: none;
+        }
+
+        .info-card {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 50, 50, 0.3);
+            padding: 1.5rem 2rem;
+            color: rgba(255, 200, 200, 0.9);
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 3s ease 1s;
+        }
+
+        .info-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.02em;
+            color: #ff4444;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .info-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* Show card when loaded */
+        body.loaded .info-card {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <div class="info-card">
+        <div class="info-title">Heat</div>
+        <div class="info-year">2025</div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
+    <script type="module" src="assets/js/heat.js"></script>
+    <script>
+        // Performance fix: Remove filter/transition after animation completes
+        document.body.addEventListener('transitionend', () => {
+            if (document.body.classList.contains('loaded')) {
+                document.body.classList.add('animation-complete');
+            }
+        }, { once: true });
+    </script>
+</body>
+
+</html>

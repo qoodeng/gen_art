@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gallery</title>
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-pattern">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Gallery</h1>
+        </header>
+
+        <div class="gallery-list">
+            <a href="waves.html" class="art-card">
+                <div class="card-content">
+                    <div class="card-title">Underwater Waves</div>
+                    <div class="card-description">Three.js & Custom GLSL. A procedural study of light and motion beneath
+                        the surface. Simplex noise drives organic vertex displacement and fragment shading to create a
+                        hypnotic, undulating seascape.</div>
+                </div>
+                <div class="card-number">001</div>
+            </a>
+
+            <a href="heat.html" class="art-card">
+                <div class="card-content">
+                    <div class="card-title">Heat</div>
+                    <div class="card-description">Three.js & WebGL. An isometric thermal simulation tracking the chaotic
+                        movement of 100+ autonomous agents. Features custom infrared post-processing and steering
+                        behaviors to visualize crowd dynamics.</div>
+                </div>
+                <div class="card-number">002</div>
+            </a>
+
+            <a href="layover.html" class="art-card">
+                <div class="card-content">
+                    <div class="card-title">Layover</div>
+                    <div class="card-description">Three.js & WebGL. A pixelated meditation on liminal spaces. This
+                        low-res simulation captures the quiet solitude of an airport terminal at night, complete with
+                        atmospheric lighting and the passage of time.</div>
+                </div>
+                <div class="card-number">003</div>
+            </a>
+
+            <a href="ice_cream.html" class="art-card">
+                <div class="card-content">
+                    <div class="card-title">Ice Cream</div>
+                    <div class="card-description">Canvas API & Physics. A 2D interactive galaxy simulation inspired by
+                        soft serve.
+                        Features thousands of particles in a spring-based physics system, allowing users to swirl the
+                        cosmos with their cursor.</div>
+                </div>
+                <div class="card-number">004</div>
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2025 Stephens Institute for Advanced Studies
+        </footer>
+    </div>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/gallery_background.js"></script>
+</body>
+
+</html>

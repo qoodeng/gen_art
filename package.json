@@ -1,0 +1,25 @@
+{
+  "name": "underwater-wave-visualization",
+  "version": "1.0.0",
+  "description": "Immersive generative art piece simulating ocean waves from beneath the surface",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "three.js",
+    "generative-art",
+    "webgl",
+    "shaders",
+    "ocean",
+    "waves"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.128.0"
+  },
+  "devDependencies": {}
+}
+
