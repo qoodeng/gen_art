@@ -59,8 +59,7 @@ class Eye {
                 case 'CLOSING':
                     this.blinkState = 'CLOSED';
                     this.blinkTimer = Math.random() * 2000 + 500; // Stay closed for much longer (very infrequent)
-                    // Chance to move when closed
-                    if (Math.random() < 0.5) this.reset();
+                    this.reset(); // Always move when closed
                     break;
             }
         }
@@ -78,23 +77,22 @@ class Eye {
         if (this.blinkState === 'CLOSED' && this.openProgress <= 0) return;
 
         ctx.save();
-        ctx.translate(this.x, this.y);
+        ctx.globalAlpha = this.openProgress; // Fade in/out
+        // Snap to integer coordinates for pixel look
+        ctx.translate(Math.floor(this.x), Math.floor(this.y));
 
         // Draw two eyes
-        const eyeSpacing = this.size * 3.5; // Wider set eyes
-        const eyeHeight = this.size * this.openProgress;
+        const eyeSpacing = Math.floor(this.size * 3.5);
+        const eyeWidth = Math.floor(this.size * 1.5);
+        const eyeHeight = Math.max(1, Math.floor(this.size * 1.5 * this.openProgress));
 
         ctx.fillStyle = this.color;
 
         // Left eye
-        ctx.beginPath();
-        ctx.ellipse(-eyeSpacing / 2, 0, this.size, eyeHeight, 0, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.fillRect(-eyeSpacing / 2 - eyeWidth / 2, -eyeHeight / 2, eyeWidth, eyeHeight);
 
         // Right eye
-        ctx.beginPath();
-        ctx.ellipse(eyeSpacing / 2, 0, this.size, eyeHeight, 0, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.fillRect(eyeSpacing / 2 - eyeWidth / 2, -eyeHeight / 2, eyeWidth, eyeHeight);
 
         // Glow
         ctx.shadowBlur = 10;
