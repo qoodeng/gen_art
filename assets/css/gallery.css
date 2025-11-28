@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --accent-color: #000000;
-    --card-bg: #ffffff;
-    --card-border: #e0e0e0;
-    --card-hover-border: #000000;
+    --bg-color: #050505;
+    --text-color: #e0e0e0;
+    --accent-color: #ffffff;
+    --card-bg: rgba(20, 20, 20, 0.8);
+    --card-border: #333333;
+    --card-hover-border: #ffffff;
     --grid-gap: 4rem;
     /* More breathing room */
 }
@@ -81,7 +81,7 @@ h1 {
     font-family: 'Inter', sans-serif;
     /* Keep sans-serif for small UI text for readability */
     font-size: 0.85rem;
-    color: #666;
+    color: #aaaaaa;
     letter-spacing: 0.2em;
     text-transform: uppercase;
 }
@@ -96,10 +96,10 @@ h1 {
 }
 
 .art-card {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -117,16 +117,16 @@ h1 {
 .art-card:focus {
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.02);
-    background-color: rgba(255, 255, 255, 0.95);
-    border-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(20, 20, 20, 0.95);
+    border-color: rgba(255, 255, 255, 0.2);
     outline: none;
 }
 
 .art-card:active {
     transform: translateY(-6px) scale(1.00);
-    background-color: #ffffff;
+    background-color: #000000;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05), 0 5px 5px rgba(0, 0, 0, 0.02);
-    border-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
     transition: all 0.1s ease;
 }
 
@@ -151,7 +151,7 @@ h1 {
 .card-description {
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
-    color: #666;
+    color: #aaaaaa;
     line-height: 1.6;
     font-weight: 400;
 }
@@ -160,7 +160,7 @@ h1 {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.3);
     position: absolute;
     bottom: 2rem;
     right: 2rem;
@@ -172,7 +172,7 @@ h1 {
 }
 
 .art-card:hover .card-number {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     transform: none;
 }
 
@@ -184,7 +184,7 @@ footer {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
-    color: #999;
+    color: #666;
     padding-bottom: 2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;

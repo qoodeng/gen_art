@@ -21,7 +21,7 @@ function init() {
 function animate() {
     time += 0.005; // Slower animation
 
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#050505';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const centerX = canvas.width * CENTER_X;
@@ -45,7 +45,7 @@ function animate() {
             const opacity = wave * densityFactor * 0.3; // Lower opacity
 
             if (opacity > 0.15) {
-                ctx.fillStyle = `rgba(0, 0, 0, ${opacity})`;
+                ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
                 ctx.beginPath();
                 ctx.arc(x, y, DOT_SIZE, 0, Math.PI * 2);
                 ctx.fill();
