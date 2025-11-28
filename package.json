@@ -4,8 +4,8 @@
   "description": "Immersive generative art piece simulating ocean waves from beneath the surface",
   "main": "index.html",
   "scripts": {
-    "dev": "npx serve .",
-    "start": "npx serve ."
+    "dev": "npx serve . -p 4002",
+    "start": "npx serve . -p 4002"
   },
   "keywords": [
     "three.js",
@@ -22,4 +22,3 @@
   },
   "devDependencies": {}
 }
-

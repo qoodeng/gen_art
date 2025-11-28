@@ -50,7 +50,11 @@ Simply open `index.html` in a modern web browser, or use a local server:
 npm run dev
 # or
 npx serve .
+# or
+python3 start_server.py
 ```
+
+Then navigate to `http://localhost:4002`.
 
 Then navigate to `http://localhost:3000` (or the port shown).
 
